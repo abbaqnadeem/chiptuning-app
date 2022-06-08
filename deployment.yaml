@@ -1,0 +1,211 @@
+---
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: fe-chiptuning
+  namespace: chiptuning
+  labels:
+    app: fe-chiptuning
+    tier: frontend
+    version: v1
+---
+
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fe-chiptuning
+  namespace: chiptuning
+  labels:
+    app: fe-chiptuning
+    tier: frontend
+    version: v1
+data:
+  app.name: "Chiptuning Rotterdam"
+  app.env: production 
+  app.debug: true
+  app.url: https://www.chiptuningrotterdam.nl
+  base.url: https://www.chiptuningrotterdam.nl
+  log.channel: stack
+
+  db.connection: mysql 
+  db.host: 127.0.0.1 
+  db.port: 3306 
+  db.database: chiptuning-staging 
+  db.username: chiptuning 
+  db.password: 8password9 
+
+  broadcast.driver: log 
+  cache.driver: file 
+  queue.connection: sync 
+  session.driver: cookie 
+  session.lifetime: 64000
+
+  zoho.host: smtp.zoho.com 
+  zoho.email: info@chiptuningrotterdam.nl 
+  zoho.password: zqsYkTK3g8CC
+  zoho.subject: "Chiptuning Rotterdam"
+
+
+
+---
+
+---
+apiVersion: v1
+kind: Secret
+type: Opaque
+metadata:
+  name: fe-chiptuning
+  namespace: chiptuning
+  labels:
+    app: fe-chiptuning
+    tier: frontend
+    version: v1
+data:
+  webhook.secret: secretvalue1
+---
+
+---
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: fe-chiptuning
+  namespace: chiptuning
+  labels:
+    app: fe-chiptuning
+    tier: frontend
+    version: v1
+spec:
+  source:
+    type: Git
+    git:
+      uri: 'git@bitbucket.org:it22bv/chiptuning-front-end.git'
+      ref: master   # Currently using Feat/deploment branch
+    contextDir: /
+    sourceSecret:
+      name: chiptuning-ssh-key # using ssh key secret with name chiptuning-ssh-key
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'fe-chiptuning:latest' # ImageStream where build will park the output image
+  strategy:
+    type: Docker
+    dockerStrategy:
+      dockerfilePath: Dockerfile
+
+  triggers:
+    - type: ImageChange
+      imageChange: {}
+    - type: ConfigChange
+    - type: "Bitbucket"
+      bitbucket:
+        secret: secretvalue1
+---
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fe-chiptuning
+  annotations:
+    image.openshift.io/triggers: |-
+      [{"from":{"kind":"ImageStreamTag","name":"fe-chiptuning:latest","namespace":"chiptuning"},"fieldPath":"spec.template.spec.containers[?(@.name==\"fe-chiptuning\")].image","pause":"false"}]
+  namespace: chiptuning
+spec:
+  selector:
+    matchLabels:
+      app: fe-chiptuning
+      tier: frontend
+      version: v1
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: fe-chiptuning
+        tier: frontend
+        name: fe-chiptuning
+        version: v1
+    spec:
+      containers:
+        - name: fe-chiptuning
+          image: 'image-registry.openshift-image-registry.svc:5000/chiptuning/fe-chiptuning:latest'
+          ports:
+            - containerPort: 8052
+          imagePullPolicy: Always
+          env:
+            - name: ABC 
+              valueFrom:
+                configMapKeyRef:
+                  name: configmap.name
+                  key: key.name 
+
+---
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fe-chiptuning
+  namespace: chiptuning
+  labels:
+    app: fe-chiptuning
+    tier: frontend
+    version: v1
+spec:
+  selector:
+    app: fe-chiptuning
+    tier: frontend
+    version: v1
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8052
+---
+
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: it22route
+  namespace: chiptuning
+  labels:
+    app: fe-chiptuning
+    tier: frontend
+    version: v1
+spec:
+  host: it22.nl
+  to:
+    kind: Service
+    name: fe-chiptuning
+  port:
+    targetPort: 8052
+  tls:
+    termination: edge
+    certificate: 
+    key: 
+    insecureEdgeTerminationPolicy: Redirect
+---
+
+
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: fe-chiptuning
+  namespace: chiptuning
+  labels:
+    app: fe-chiptuning
+    tier: frontend
+    version: v1
+spec:
+  to:
+    kind: Service
+    name: fe-chiptuning
+  port:
+    targetPort: 8052
+  tls:
+    termination: edge
+    certificate: 
+    key:
+    insecureEdgeTerminationPolicy: Redirect
+---

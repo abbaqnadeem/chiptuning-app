@@ -1,0 +1,11 @@
+apps:
+  - name: laravel-queue-worker
+    script: artisan
+    exec_mode: fork
+    interpreter: /opt/plesk/php/7.2/bin/php
+    instances: 1
+    args:
+      - queue:listen
+      - --tries=5
+      - --sleep=1
+

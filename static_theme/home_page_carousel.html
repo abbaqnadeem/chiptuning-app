@@ -1,0 +1,186 @@
+<style>
+    /** Chiptuning Carasoul */
+
+    /* ensure equal card height inside carousel */
+    .carousel-inner > .row-equal.active,
+    .carousel-inner > .row-equal.next,
+    .carousel-inner > .row-equal.prev {
+        display: flex;
+    }
+
+    /* prevent flicker during transition */
+    .carousel-inner > .row-equal.active.left,
+    .carousel-inner > .row-equal.active.right {
+        opacity: 0.5;
+        display: flex;
+    }
+
+    .carousel-inner {
+        overflow: unset !important;
+    }
+
+    .carousel-inner {
+        /*overflow-y: hidden !important;*/
+    }
+
+    .carousel-item {
+        /*disables white flash*/
+        -webkit-transition: -webkit-transform 0.5s ease-in-out;
+        -o-transition: -o-transform 0.5s ease-in-out;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-item-next {
+        display: none;
+    }
+
+    .prev,
+    .next {
+        position: relative;
+        top: 175px;
+    }
+
+    .prev:hover,
+    .next:hover {
+        color: #c20000;
+        background-color: #f7f7f7;
+    }
+</style>
+<!-- carousel -->
+<section class="carousel slide row" data-ride="carousel" id="postsCarousel">
+    <div class="col-lg-1">
+        <a
+            class="btn btn-outline-secondary prev maroon-border-2"
+            href=""
+            title="Prev"
+            ><i class="fa fa-lg fa-chevron-left color-maroon"></i
+        ></a>
+    </div>
+    <div class="col-lg-10">
+        <div class="container p-t-0 m-t-2 carousel-inner">
+            <div class="row row-equal carousel-item m-t-0">
+                <!-- CHIPTUNING GARANTIE 5 JAAR -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body white-card">
+                            <img
+                                class="img-fluid sm-icon"
+                                src="images/chip-1.png"
+                                alt="Carousel 1"
+                            />
+                            <h2 class="text-uppercase text-maroon fs-26 mt-4">
+                                CHIPTUNING GARANTIE 5 JAAR
+                            </h2>
+                            <div
+                                class="card-block p-4 black-card bg-dark text-white"
+                            >
+                                Betrouwbaarheid en veiligheid is voor ons een
+                                prioriteit, vandaar dat elke optimalisaties op
+                                maat uitgevoerd wordt voor uw specifieke auto.
+                                Wij zijn overtuigd van onze kwaliteit en geven
+                                standaard 5 jaar software garantie op elke
+                                getuned auto.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VERBRUIK TOT 15% ZUINIGER -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body white-card">
+                            <img
+                                class="img-fluid sm-icon"
+                                src="images/chip-1.png"
+                                alt="Carousel 1"
+                            />
+                            <h2
+                                class="text-uppercase text-maroon fs-26 mt-4 mb-0"
+                            >
+                                VERBRUIK TOT 15%
+                            </h2>
+                            <h2 class="text-uppercase text-maroon fs-26 mt-0">
+                                ZUINIGER
+                            </h2>
+                            <div
+                                class="card-block p-4 black-card bg-dark text-white"
+                            >
+                                Meer vermogen met minder brandstof, waarom zou
+                                je kiezen als je beide kan hebben ? Een goede
+                                tuning kan zorgen voor meer power met een lager
+                                verbruik. Deze afstelling is mogelijk voor
+                                diverse auto maar niet voor elke type, neem
+                                contact met ons op voor de mogelijkheden voor uw
+                                specifieke auto.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KWALITEIT EN DUURZAAMHEID -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body white-card">
+                            <img
+                                class="img-fluid sm-icon"
+                                src="images/chip-1.png"
+                                alt="Carousel 3"
+                            />
+                            <h2 class="text-uppercase text-maroon fs-26 mt-4">
+                                KWALITEIT EN DUURZAAMHEID
+                            </h2>
+                            <div
+                                class="card-block p-4 black-card bg-dark text-white"
+                            >
+                                Meeste auto’s worden getuned voor dagelijks
+                                gebruik vandaar dat betrouwbaarheid bij ons
+                                voorop staat. Wij zorgen voor meer vermogen op
+                                een verantwoorde manier door het benutten van de
+                                marges die de autofabrikant standaard heeft
+                                ingebouwd.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-equal carousel-item active m-t-0">
+                <!-- MEER VERMOGEN 20% TOT 100% -->
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body white-card">
+                            <img
+                                class="img-fluid sm-icon"
+                                src="images/chip-3.png"
+                                alt="Carousel 3"
+                            />
+                            <h2 class="text-uppercase text-maroon fs-26 mt-4">
+                                MEER VERMOGEN 20% TOT 100%
+                            </h2>
+                            <div
+                                class="card-block p-4 black-card bg-dark text-white"
+                            >
+                                Chiptuning is het afstellen van de motor voor
+                                optimale prestaties. Elke moderne auto beschikt
+                                over een computer (ecu) die op basis van
+                                sensoren de motor aanstuurt. Wij stellen uw auto
+                                af zodat deze beter presteert binnen de marges
+                                van de fabrikant, dus zonder afbreuk op
+                                betrouwbaarheid.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1">
+        <a
+            class="btn btn-outline-secondary next maroon-border-2"
+            href=""
+            title="Next"
+            ><i class="fa fa-lg fa-chevron-right color-maroon"></i
+        ></a>
+    </div>
+</section>
+<!-- /carousel -->

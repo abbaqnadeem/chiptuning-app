@@ -1,0 +1,1485 @@
+@font-face {
+    font-family: 'Agency FB Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('﻿Agency FB'), url('fonts/AGENCYB.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'AgencyFB-Reg';
+    font-style: normal;
+    font-weight: normal;
+    src: local('﻿AgencyFB-Reg'), url('fonts/AGENCYB.woff') format('woff');
+}
+
+/* template */
+body, html {
+    height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-family: Agency FB;
+}
+
+/* hidden spacer before sections for proper offset */
+section:before {
+    height: 56px;
+    content: "";
+    display: block;
+}
+
+.gallery {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-width: 33%;
+    -moz-column-width: 33%;
+    column-width: 33%;
+}
+
+.gallery .pics {
+    -webkit-transition: all 350ms ease;
+    transition: all 350ms ease;
+}
+
+.gallery .animation {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+@media (max-width: 450px) {
+    .gallery {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+        -webkit-column-width: 100%;
+        -moz-column-width: 100%;
+        column-width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .btn.filter {
+        padding-left: 1.1rem;
+        padding-right: 1.1rem;
+    }
+
+    .stages-btn {
+        width: 200px;
+    }
+
+    .chiptuning-stages-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+}
+
+
+/* helpers */
+.vh-50 {
+    min-height: 50vh;
+}
+
+.vh-75 {
+    min-height: 75vh;
+}
+
+.vh-100 {
+    min-height: 100vh;
+}
+
+.header-top {
+    font-size: 12px;
+    padding: 15px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+header {
+    background: url(../images/banner.png) center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header.gallery-banner {
+    background: url(../images/gallery-banner.png) center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header.contact-us-banner {
+    background: url(../images/gallery-banner.png) left;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 400px;
+}
+
+#sec-6 {
+    background: url(../images/section-6.png) center;
+    background-size: cover;
+    height: 1000px;
+}
+
+.nav-link {
+    font-family: "Agency FB";
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.22px;
+    color: lightgrey;
+    margin-right: 19px;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+#logo {
+    width: 70%;
+}
+
+.notification {
+    background: #C20000;
+    position: relative;
+    bottom: 42px;
+    left: -4px;
+    font-size: 10px;
+}
+
+.bolder {
+    font-weight: 400;
+}
+
+.banner-heading {
+    font-family: "Agency FB Bold";
+    font-size: 60px;
+    background: url(../images/hr.png) bottom;
+    background-repeat: no-repeat;
+    background-size: 44.5% 10%;
+    background-position-y: 52px;
+}
+
+
+.gallery-banner {
+    font-family: "Agency FB Bold";
+    /*font-size: 60px;*/
+}
+
+.banner-second-heading {
+    font-family: "Agency FB Bold";
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.banner-btn {
+    width: 310px;
+    height: 80px;
+    padding: 25px 0;
+    margin-bottom: 7.5rem !important;
+}
+
+.maroon-bg:hover {
+    background-color: #7b0404;
+}
+
+.maroon-bg {
+    font-family: "Agency FB Bold";
+    background-color: #C20000 !important;
+}
+
+.white-bg {
+    font-family: "Agency FB Bold";
+    background-color: white !important;
+}
+
+.text-maroon {
+    font-family: "Agency FB Bold";
+    color: #C20000 !important;
+}
+
+.color-maroon {
+    color: #C20000 !important;
+}
+
+.btn-primary {
+    background-color: #1f1f1f;
+    color: white !important;
+}
+
+#short_list_now {
+    padding: 7.5px 20px;
+}
+
+#search_specification {
+    margin-bottom: 4.5rem !important;
+}
+
+#gallery_search_specification {
+    margin-top: 5rem !important;
+    margin-bottom: 5rem !important;
+    font-family: "Agency FB Bold";
+    font-size: 35px !important;
+    font-weight: 400;
+}
+
+.mt-10 {
+    margin-top: 10rem !important;
+}
+
+.maroon-border {
+    border: 1px solid #C20000 !important;
+}
+
+.maroon-border-2 {
+    border: 2px solid #C20000 !important;
+}
+
+.maroon-border-l-8 {
+    border-left: 8px solid #C20000 !important;
+}
+
+.maroon-border-contact-us {
+    border-left: 8px solid #C20000 !important;
+}
+
+.maroon-border-l-10 {
+    border-left: 10px solid #C20000 !important;
+}
+
+.services {
+    padding: 0;
+    height: 150px;
+}
+
+.services .card {
+    height: 150px;
+}
+
+.services .card-title {
+    font-family: "Agency FB Bold";
+    color: black !important;
+}
+
+.services .card-body {
+    padding: 0 1.25rem 0 1.25rem;
+    margin-top: -20px;
+}
+
+section:before {
+    height: 0;
+    content: "";
+    display: block;
+}
+
+.bold-fam {
+    font-family: "Agency FB Bold";
+}
+
+.h-xl {
+    font-size: 60px !important;
+}
+
+.par {
+    font-size: 20px;
+    margin-bottom: 2.5rem;
+}
+
+.par:last-of-type {
+    margin-bottom: 3rem !important;
+}
+
+.feel_free_par {
+    font-size: 20px;
+    margin-bottom: 2rem;
+}
+
+.car_details_par {
+    font-size: 20px;
+    margin-bottom: 3.1rem;
+    border-left: 10px solid #C20000;
+    padding-left: 20px;
+}
+
+.border-left-none {
+    border-left: none;
+}
+
+.btn-xl {
+    padding: 1.5rem 1rem;
+    font-size: 14pt;
+    line-height: 1.5;
+    border-radius: 0;
+}
+
+.chiptuning-sec-label {
+    padding: 1rem 3rem;
+    border-radius: 4px;
+    background: #C20000 !important;
+    opacity: .85;
+}
+
+.chiptuning-label-parent {
+    position: absolute;
+    right: 25px;
+    bottom: -15px;
+}
+
+.sec1 {
+}
+
+.soft-bg {
+    background: #F7F7F7;
+}
+
+#subscribe_btn {
+    height: 50px;
+    padding: 0 35px;
+}
+
+.gray-border {
+    border-bottom: 1px solid lightgray;
+}
+
+.gray-border-full {
+    border: 1px solid gray;
+}
+
+footer a {
+    color: #fff;
+    font-size: 14px;
+    transition-duration: 0.2s;
+}
+
+footer a:hover {
+    color: #FA944B;
+    text-decoration: none;
+}
+
+#sec-4 {
+    background: url(../images/sec-4.png);
+    background-size: contain;
+    padding-bottom: 5rem;
+}
+
+/*SOCİAL İCONS*/
+
+/* footer social icons */
+
+ul.social-network {
+    list-style: none;
+    display: inline;
+    margin-left: 0 !important;
+    padding: 0;
+}
+
+ul.social-network li {
+    display: inline;
+    margin: 0 5px;
+}
+
+
+/* footer social icons */
+
+.social-network a.icoFacebook:hover {
+    background-color: #3B5998;
+}
+
+.social-network a.icoLinkedin:hover {
+    background-color: #007bb7;
+}
+
+.social-network a.icoFacebook:hover i,
+.social-network a.icoLinkedin:hover i {
+    color: #fff;
+}
+
+.social-network a.socialIcon:hover,
+.socialHoverClass {
+    color: #44BCDD;
+}
+
+.social-circle li a {
+    border: 1px solid #595959;
+    display: inline-block;
+    position: relative;
+    margin: 0 auto 0 auto;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+}
+
+.social-circle li i {
+    margin: 0;
+    line-height: 30px;
+    text-align: center;
+}
+
+.social-circle li a:hover i,
+.triggeredHover {
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -ms--transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.social-circle i {
+    color: #595959;
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    transition: all 0.8s;
+}
+
+.social-network a {
+    background-color: #F9F9F9;
+}
+
+.chiptuning-sec-img {
+    width: 350px;
+    height: 350px;
+}
+
+/* equal card height */
+.row-equal > div[class*='col-'] {
+    display: flex;
+    flex: 1 0 auto;
+}
+
+.row-equal .card {
+    width: 100%;
+}
+
+
+/* control image height */
+.card-img-top-250 {
+    max-height: 250px;
+    overflow: hidden;
+}
+
+.fs-26 {
+    font-size: 26px;
+}
+
+.black-card {
+    max-width: 460px;
+}
+
+.card-block {
+    width: 225px;
+    height: 300px;
+}
+
+.sm-icon {
+    width: 50px;
+    height: 60px;
+}
+
+#chiptuning {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+}
+
+#footer_social_media_elem {
+    text-align: left;
+    padding-left: 0 !important;
+}
+
+#sec-5 {
+    background: url(../images/sec-5.png) center;
+    background-size: cover;
+    height: 800px;
+}
+
+#sec-5-title {
+    margin-top: 6rem !important;
+    position: relative;
+    left: 2rem;
+}
+
+.sec-5-box {
+    padding: 6rem 4rem;
+    position: relative;
+    width: 310px;
+    left: 34px;
+}
+
+#sec-5-box-1 {
+    top: -55px;
+}
+
+#sec-5-box-2 {
+    top: 30px;
+}
+
+#sec-5-box-3 {
+    top: 135px;
+}
+
+.dark-overlay {
+    background: radial-gradient(black, transparent);
+}
+
+#sec-7-title {
+    margin-top: 6rem;
+}
+
+.fs-30 {
+    font-size: 30px;
+}
+
+.fs-40 {
+    font-size: 40px;
+}
+
+.fs-35 {
+    font-size: 35px;
+}
+
+.fs-50 {
+    font-size: 50px;
+}
+
+.mt-7 {
+    margin-top: 7rem !important;
+}
+
+.mb-7 {
+    margin-bottom: 7rem !important;
+}
+
+.review-img {
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    margin-top: -75px;
+}
+
+.company-img {
+    width: 38px;
+    height: 38px;
+    position: relative;
+    left: 36px;
+    bottom: 40px;
+}
+
+.stars {
+    color: #FFD54F;
+}
+
+.home-blog-img {
+    max-width: 460px;
+    max-height: 420px;
+}
+
+.pt-5r {
+    padding-top: 5rem !important;
+}
+
+.white-border-l {
+    border-left: 1px solid white;
+}
+
+.fs-24 {
+    font-size: 24px;
+}
+
+#home_page_blog_logo {
+    width: 250px;
+    background-color: #29292a;
+    position: relative;
+    left: 95px;
+    top: 50px;
+}
+
+.home-contact-us-sec-2 {
+    background-color: black;
+}
+
+.mt-15 {
+    margin-top: 15rem;
+}
+
+.home-contact-content {
+    padding: 5rem 2rem !important;
+    background-color: #19191a;
+    font-size: 20px;
+}
+
+.contact-us-addr-first {
+    border-right: 1px solid white;
+    padding-right: 10px;
+}
+
+.contact-us-addr-sec {
+    padding-left: 10px;
+}
+
+#eng_team {
+    background-size: contain;
+    height: 100px;
+    background: url(../images/quote.png) no-repeat center;
+}
+
+.pt-8 {
+    padding-top: 8rem !important;
+}
+
+.shrink {
+    padding-top: 1.5rem !important;
+    background-color: #212529;
+    margin-top: 0 !important;
+}
+
+@media (max-width: 992px) {
+
+    #stage-3-tab {
+        margin-top: 1rem;
+    }
+
+    #navbar {
+        padding-top: 1.5rem !important;
+        background-color: #212529;
+    }
+
+    .banner-heading {
+        margin-top: 5rem;
+    }
+
+    .card-block {
+        margin-bottom: 4rem;
+    }
+
+    #blog > .offset-1 {
+        margin-left: 0 !important;
+    }
+
+    .blog-card {
+        left: 60px;
+        bottom: 60px;
+        position: relative;
+    }
+
+    #footer_subscribe_section {
+        margin-top: 3rem;
+        padding-left: 0 !important;
+    }
+
+    #footer_subscribe_elem {
+        padding-left: 1rem !important;
+    }
+
+    #get_a_best_car_ever {
+        background: black !important;
+        height: 600px;
+    }
+
+    #get_a_best_car_ever_mobile {
+        background: url(../images/car_details/get_a_best_car_ever.png);
+        background-size: cover;
+        height: 600px;
+    }
+
+    #your_dashboard_easy {
+        margin-top: 0 !important;
+    }
+
+    .custom_chiptuning_title {
+        margin-top: 2rem !important;
+    }
+
+    #feel_free_to_contact_us_content {
+        margin-top: 2rem !important;
+    }
+
+    #feel_free_to_contact_us_content h1 {
+        font-size: 35px !important;
+    }
+
+    #feel_free_to_contact_us {
+        margin-top: 10rem;
+        background: url(../images/car_details/feel_free_to_contact_us.png);
+        background-size: cover !important;
+        background-repeat: no-repeat;
+        height: 350px !important;
+    }
+
+    .not_simply_a_car_img_parent {
+        text-align: center;
+    }
+
+    .not_simply_a_car_img {
+        width: 400px !important;
+        height: 400px !important;
+        margin-bottom: 3rem;
+    }
+
+    #not_simply_a_car_2nd_img {
+        padding-bottom: 0 !important;
+    }
+
+    #chiptuning_page_title {
+        font-size: 40px !important;
+    }
+
+    #chiptuning_page_subtitle_1, #chiptuning_page_subtitle_2 {
+        font-size: 23px;
+    }
+
+    .chiptuning-stages-tab {
+        margin-top: 2rem;
+        justify-content: center !important;
+    }
+
+    #data-logging {
+        margin-top: 5rem
+    }
+
+    .benefits {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 520px) {
+    #short_list_now {
+        width: 250px;
+        position: relative;
+        left: -12px;
+    }
+}
+
+#home_page_filters > .form-group {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+#about_title {
+    font-size: 22px;
+    font-family: "Agency FB Bold";
+    color: black !important;
+}
+
+.home-contact-us-sec-1 {
+    margin-top: 15rem !important;
+}
+
+.home-contact-us-sec-2 {
+    margin-top: 15rem !important;
+}
+
+.home-contact-us-sec-2 > .contact-us-title {
+    float: right;
+}
+
+.gallery-content {
+    margin-top: 15rem;
+}
+
+.contact-us-content {
+    margin-top: 7rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+@media (max-width: 991px) {
+    #about_title {
+        font-size: 40px;
+        text-align: center;
+        margin-top: 0 !important;
+    }
+
+    #about_subtitle {
+        text-align: center;
+    }
+
+    #about_description {
+        text-align: center;
+    }
+
+    .about-btn {
+        font-size: 26px;
+        padding: 4rem;
+        text-align: center;
+        width: 350px;
+    }
+
+    #about_btn_row > .form-group {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-btn > i {
+        padding-right: 10px;
+    }
+
+    #about_img, #custom_chiptuning_img {
+        margin-top: 6rem;
+        margin-bottom: 3rem;
+    }
+
+    .sec1 {
+        margin-bottom: 5rem !important;
+    }
+
+    #chiptuning_title {
+        font-size: 40px;
+        text-align: center;
+        margin-top: 0 !important;
+    }
+
+    #chiptuning_subtitle {
+        text-align: center;
+        font-size: 60px;
+    }
+
+    .maroon-border-l-8 {
+        border: none !important;
+    }
+
+    .chiptuning-sec-img {
+        width: auto;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .chiptuning-first-sec {
+        margin-bottom: 5rem;
+    }
+
+    #sec-5 {
+        height: 1100px;
+    }
+
+    #sec-5-title {
+        text-align: center;
+    }
+
+    #sec-5-box-1, #sec-5-box-2, #sec-5-box-3 {
+        top: 0;
+    }
+
+    .sec-5-box {
+        position: unset;
+        left: 0;
+        margin-top: 4rem;
+        margin-left: auto;
+        margin-right: auto !important;
+    }
+
+    #sec-5-title {
+        left: 0;
+    }
+
+    .center-services {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    #sec-7-title {
+        text-align: center;
+    }
+
+    .review-card {
+        margin-bottom: 7rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #reviews > .mb-7 {
+        margin-bottom: 0 !important;
+    }
+
+    .home-contact-us-sec-1 {
+        margin-top: 30px !important;
+    }
+
+    .home-contact-us-sec-2 {
+        margin-top: 5rem !important;
+    }
+
+    #sec-6 {
+        height: 1550px;
+    }
+
+    .home-contact-us-sec-2 > .contact-us-title {
+        text-align: center !important;
+        float: none;
+    }
+
+    .contact-us-title > .maroon-border-l-10 {
+        border-left: none !important;
+    }
+
+    .maroon-border-l-10 > .fs-35 {
+        font-size: 45px !important;
+    }
+
+    .home-contact-us-sec-2 {
+        padding: 2rem 4rem 4rem 4rem;
+    }
+
+    #home_page_blog_logo {
+        left: 30%;
+    }
+
+    .home-blog-img {
+        text-align: center;
+    }
+
+    #footer_social_media_elem {
+        text-align: center !important;
+    }
+
+    [data-toggle="lightbox"] img {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    #logo {
+        width: 55% !important;
+    }
+
+    .services {
+        padding: 2rem !important;
+    }
+
+    .par {
+        text-align: center;
+    }
+
+    #sec-5 {
+        height: 1580px !important;
+    }
+
+    .home-contact-us-sec-1 {
+        margin-bottom: 3rem;
+    }
+
+    .home-blog-img {
+        max-width: 100% !important;
+    }
+
+    .img-padding {
+        padding-right: 0 !important;
+    }
+
+    .center-mobile {
+        text-align: center;
+        margin-bottom: 4rem !important;
+    }
+
+    #footer_subscribe_section {
+        padding: 0 3rem !important
+    }
+
+    .home-blog-img {
+        width: 100%;
+    }
+
+    .blog-card {
+        max-width: 100% !important;
+        width: 100% !important;
+        position: unset;
+    }
+
+    .blog-card h5 {
+        font-size: 1rem !important;
+    }
+
+    .white-border-l {
+        padding-left: 4rem !important;
+    }
+
+    .pre {
+        white-space: unset !important;
+    }
+
+    #get_a_best_car_ever_mobile {
+        background: url(../images/car_details/get_a_best_car_ever.png) !important;
+        background-size: cover !important;
+        height: 314px !important;
+        background-repeat: no-repeat !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .white-border-l {
+        padding-left: 0.60rem !important;
+    }
+
+    .blog-card h5 {
+        font-size: 0.8rem !important;
+    }
+
+    #get_a_best_car_ever_mobile {
+        background: url(../images/car_details/get_a_best_car_ever.png) !important;
+        background-size: contain !important;
+        height: 314px !important;
+        background-repeat: no-repeat !important;
+    }
+
+    #not_simply_a_car_title, #not_simply_a_car {
+        margin-top: 0 !important;
+    }
+
+}
+
+#contact_us_banner_border {
+    margin-top: -12rem;
+}
+
+@media (max-width: 1200px) {
+
+    #contact_us_banner_border {
+        margin-top: -5rem !important;
+    }
+
+    .sec-5-box {
+        width: 280px;
+    }
+
+    .blog-card {
+        width: 460px;
+    }
+
+    #gallery_banner_border {
+        border-left: none !important;
+    }
+
+    #gallery_banner_main_heading {
+        margin-top: 20rem !important;
+        text-align: center;
+        color: #C20000;
+        font-family: Agency FB Bold;
+    }
+
+    .gallery-banner {
+        height: 1000px;
+    }
+
+    .gallery-content {
+        margin-top: 10rem;
+    }
+}
+
+@media (max-width: 767px) {
+    #stage-3-tab {
+        width: 300px !important;
+    }
+
+    #contact_us_banner_border {
+        margin-top: -12rem !important;
+    }
+
+    #sec-5 {
+        height: 1480px;
+    }
+
+    #home_page_blog_logo {
+        left: 10%;
+    }
+
+    #copyright, #dark-logo-elem {
+        text-align: center !important;
+    }
+
+    #gallery_banner_main_heading {
+        margin-top: 35rem !important;
+        text-align: center;
+        color: #C20000;
+        font-family: Agency FB Bold;
+    }
+
+    .gallery-banner {
+        height: 1000px;
+    }
+
+    .gallery-content {
+        margin-top: 10rem;
+    }
+
+    #contact_us_banner_main_heading {
+        text-align: center;
+    }
+
+    #contact_us_request_quote i {
+        padding-right: 0.5rem !important;
+    }
+
+    #contact_us_request_quote {
+        float: unset !important;
+        text-align: center !important;
+        margin-top: 2rem;
+        margin-right: 0 !important;
+    }
+
+    .maroon-border-contact-us p {
+        /*        margin: 0;
+                float: left;
+                padding-top: -10rem;*/
+    }
+
+    .maroon-border-contact-us {
+        border-left: none !important;
+        border-bottom: 8px solid #C20000 !important;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    #get_a_best_car_ever_mobile {
+        background: url(../images/car_details/get_a_best_car_ever.png) center;
+        background-size: cover;
+        height: 314px;
+        background-repeat: no-repeat;
+    }
+
+    #feel_free_to_contact_us_content h1 {
+        margin-bottom: 3rem !important;
+    }
+
+    #feel_free_to_contact_us {
+        height: 400px !important;
+        background-size: cover !important;
+    }
+
+    #chiptuning_page_subtitle_1 {
+        margin-left: 70px !important;
+        position: relative;
+        left: -66px;
+    }
+
+    #chiptuning_page_subtitle_2 {
+        position: relative;
+        left: -66px;
+    }
+
+    #price_box {
+        float: none !important;
+        margin: 0 auto !important;
+    }
+}
+
+@media (max-width: 390px) {
+    .about-btn {
+        font-size: 22px;
+        padding: 3rem;
+        text-align: center;
+        width: 270px;
+    }
+
+    #feel_free_to_contact_us {
+        height: 550px !important;
+        background-size: cover !important;
+    }
+}
+
+@media (max-width: 500px) {
+    #get_a_best_car_ever {
+        height: 800px !important;
+    }
+}
+
+[data-toggle="lightbox"] img {
+    width: 650px;
+    height: 400px;
+}
+
+.contact-us-box {
+    padding: 4rem !important;
+}
+
+#privacy_policy_label {
+    border-right: 2px solid black;
+}
+
+.resize-none {
+    resize: none;
+}
+
+.form-group-mb-sm {
+    margin-bottom: 1rem;
+}
+
+#custom_chiptuning {
+    margin-top: 5rem;
+}
+
+.custom_chiptuning_title {
+    margin-top: 5rem;
+    font-family: Agency FB Bold;
+}
+
+.pre-line {
+    white-space: pre-line;
+}
+
+.pre {
+    white-space: pre;
+}
+
+.custom_chiptuning_btn {
+    padding: 1.5rem 4rem;
+    margin-left: 15px;
+}
+
+#your_dashboard_easy {
+    margin-top: 10rem;
+}
+
+#get_a_best_car_ever {
+    background: url(../images/car_details/get_a_best_car_ever.png) center;
+    background-size: contain;
+    height: 700px;
+}
+
+#feel_free_to_contact_us {
+    margin-top: 9rem;
+    background: url(../images/car_details/feel_free_to_contact_us.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 600px;
+}
+
+#feel_free_to_contact_us_content {
+    margin-top: 2rem;
+    text-align: center;
+    color: white;
+}
+
+#not_simply_a_car_2nd_img {
+    padding-bottom: 24px;
+}
+
+#not_simply_a_car_subtitle {
+    margin-bottom: 5rem;
+}
+
+#not_simply_a_car {
+    margin-top: 4rem;
+}
+
+.h-xxl {
+    font-size: 70px;
+}
+
+#chiptuning_page_subtitle_1 {
+    border-right: 5px solid #000;
+    padding-right: 3rem;
+}
+
+#chiptuning_page_subtitle_2 {
+    padding-left: 3rem;
+}
+
+#price_box {
+    width: 200px;
+    height: 200px;
+    background: white;
+    padding: 50px;
+}
+
+.chiptuning-stages-tab {
+    border: none;
+}
+
+.chiptuning-stages-tab .nav-link {
+    width: 330px;
+    font-size: 35px;
+    height: 70px;
+    padding: 25px;
+}
+
+.chiptuning-stages-tab .nav-link {
+    width: 300px;
+    font-size: 20px;
+    height: 50px;
+    padding: 12px 20px;
+    background: lightgray;
+    color: black;
+}
+
+#stage-3-tab {
+    width: 175px;
+    font-size: 20px;
+    height: 50px;
+    padding: 12px 20px;
+    background: white;
+    color: black;
+    cursor: default;
+    text-decoration: none;
+}
+
+.maroon-label {
+    font-family: Agency FB Bold !important;
+    background-color: #C20000 !important;
+    padding: 6px;
+    font-size: 16px;
+    position: relative;
+    top: -5px;
+    border-radius: 5px;
+}
+
+.stages-tab-first-col-1 {
+    font-size: 26px;
+}
+
+.stages-tab-first-col-2 {
+    font-size: 26px;
+    font-family: Agency FB Bold !important;
+}
+
+.stages-tab-first-col-3 {
+    font-size: 26px;
+    font-family: Agency FB Bold !important;
+    color: #C20000 !important;
+}
+
+.chiptuning-stages-table th {
+    text-transform: uppercase !important;
+}
+
+.chiptuning-stages-table td {
+    text-transform: uppercase !important;
+}
+
+.bg-gray {
+    background: lightgray;
+}
+
+.stages-btn {
+    margin-bottom: 1rem;
+}
+
+#quote_btn {
+    color: #0069d9;
+    background-color: #fff;
+    border-color: #0062cc;
+}
+
+#quote_btn:hover {
+    color: #fff !important;
+    background-color: #0069d9 !important;
+    border-color: #fff !important;
+}
+
+#phone_btn {
+    color: #17a2b8 !important;
+    background-color: #fff !important;
+    border-color: #17a2b8 !important;
+}
+
+#phone_btn:hover {
+    color: #fff !important;
+    background-color: #17a2b8 !important;
+    border-color: #17a2b8 !important;
+}
+
+#whatsapp_btn {
+    color: #2BB641 !important;
+    border-color: #2BB641;
+}
+
+#whatsapp_btn:hover {
+    background-color: #2BB641 !important;
+    color: white !important;
+    border-color: #2BB641;
+}
+
+
+@media (max-width: 576px) {
+    #chiptuning_page_subtitle_1 {
+        margin-left: 105px !important;
+        position: relative !important;
+        left: -100px !important;
+    }
+
+    #chiptuning_page_subtitle_2 {
+        position: relative !important;
+        left: -100px !important;
+    }
+}
+
+
+@media (max-width: 480px) {
+    #chiptuning_page_subtitle_1 {
+        margin-left: 0 !important;
+        position: unset !important;
+        padding-right: 5px !important;
+
+    }
+
+    #chiptuning_page_subtitle_2 {
+        position: unset !important;
+        padding-left: 5px !important;
+    }
+
+    .stages-tab-first-col-1, .stages-tab-first-col-2, .stages-tab-first-col-3 {
+        font-size: 20px;
+    }
+}
+
+.light-gray-bg {
+    background: lightgray;
+}
+
+.benefits {
+    padding: 1.5rem 4rem;
+    font-size: 14pt;
+    line-height: 1.5;
+    border-radius: 0;
+}
+
+.graphs-text {
+    margin-top: 8rem;
+    margin-bottom: 4rem;
+}
+
+.banner-title {
+    font-size: 1.1rem;
+}
+
+.banner-title-img {
+    width: 40px;
+}
+
+.car-brand-logo {
+    width: 92px;
+    height: 92px;
+}
+
+.announcement {
+    display: inline-block;
+    height: 15px;
+    text-align: center;
+    width: 100%;
+    color: white;
+    padding-bottom: 20px !important;
+    padding-right: 20px !important;
+    vertical-align: middle;
+    font-family: "Agency FB Bold";
+    font-size: 14px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.announcement a {
+    color: #ccc;
+}
+
+#navbar {
+    margin-top: 25px;
+}
